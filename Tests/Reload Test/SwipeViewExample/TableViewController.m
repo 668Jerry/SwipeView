@@ -25,21 +25,6 @@
     return self;
 }
 
-- (void)setMyReload
-{
-    
-}
-
-- (void)setMyForwards
-{
-    
-}
-
-- (void)setMyBackwards
-{
-    
-}
-
 - (void)reload
 {
     //set up colors
@@ -66,10 +51,43 @@
     [_swipeView scrollByNumberOfItems:-1 duration:1.4];
 }
 
+- (void)setMyReload
+{
+    
+}
+
+- (void)setMyForwards
+{
+    
+}
+
+- (void)setMyBackwards
+{
+    
+}
+
+- (void)setMyTableHeaderView
+{
+    //configure swipe view
+    _swipeView.alignment = SwipeViewAlignmentCenter;
+    _swipeView.pagingEnabled = YES;
+    _swipeView.wrapEnabled = NO;
+    _swipeView.truncateFinalPage = YES;
+    
+    //try scrolling immediately after load
+    [_swipeView scrollToItemAtIndex:2 duration:0.0];
+
+    
+//    UIView *viewForHeader = [self tableView].viewForHeader;
+//    [[self tableView] setTableHeaderView:viewForHeader];
+    [[self tableView] setTableHeaderView:_swipeView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self setMyTableHeaderView];
     [self setMyReload];
     [self setMyForwards];
     [self setMyBackwards];
