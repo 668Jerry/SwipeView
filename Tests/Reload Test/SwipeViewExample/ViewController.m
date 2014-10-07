@@ -36,12 +36,12 @@
 
 - (IBAction)forwards
 {
-    [_swipeView scrollByNumberOfItems:3 duration:1.4];
+    [_swipeView scrollByNumberOfItems:1 duration:1.4];
 }
 
 - (IBAction)backwards
 {
-    [_swipeView scrollByNumberOfItems:-3 duration:1.4];
+    [_swipeView scrollByNumberOfItems:-1 duration:1.4];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,7 +85,7 @@
     //create or reuse view
     if (view == nil)
     {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 480.0f)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 200.0f)];
         label.textAlignment = UITextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         view = label;

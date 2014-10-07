@@ -9,18 +9,20 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "TableViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize tableViewController = _tableViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.tableViewController = [[TableViewController alloc] init];
+    [self.window addSubview:self.tableViewController.view];
+    self.window.rootViewController = self.tableViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
